@@ -26,7 +26,9 @@
     justify-content: space-evenly;
     cursor: pointer;    
 }
-.hamburguer
+.show-menu .hamburguer{
+    right: 16rem;
+}
 
 
 .line{
@@ -34,6 +36,47 @@
     height: .1rem;
     background-color: #fff;
     box-shadow: 0.1rem 0.1rem 1px #000;
+    transition: 1s;
+}
+
+.show-menu #line1{
+    transform: rotate(45deg) translate(.3rem, .4rem);
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.3rem, -.4rem);
+}
+
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    background-color: #6a3093;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: var(--font-action);
+    opacity: 0;
+}
+
+.hamburguer span::before{
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #a044ff;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+
+.show-menu .hamburguer:hover span{
+    opacity: 1;
 }
 
 header{
@@ -123,7 +166,7 @@ header{
     right: -20rem;
     transition: all 1s;
 }
-.sidebar.show-menu{
+.show-menu .sidebar{
     right: 0;
 }
 .menu{
